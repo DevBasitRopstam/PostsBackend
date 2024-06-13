@@ -94,7 +94,7 @@ yarn-error.log
 # Bundle artifact
 *.jsbundle
 
-\.env
+
 !build.gradle
 
 #khalil added ended
