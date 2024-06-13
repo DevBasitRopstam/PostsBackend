@@ -1,6 +1,7 @@
 
 // This is the controller for the posts route
 
+import mongoose from "mongoose";
 import Posts from "../models/posts.js";
 
 export const getPosts = async(req, res) => {
@@ -33,8 +34,9 @@ export const updatePost = async(req, res) => {
 }
 export const deletePost = async(req, res) => {
     const { id } = req.params;
+    console.log(id);
     if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No post with that id');
-    await Posts.findByIdAndRemove(id);
+    await Posts.findByIdAndDelete(id);
     res.json({ message: "Post Deleted Successfully" });
 }
 
