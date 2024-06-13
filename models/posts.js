@@ -1,6 +1,5 @@
 
 import mongoose from "mongoose";
-import moment from "momnet";
 
 const postSchema = mongoose.Schema({
     title: String,
